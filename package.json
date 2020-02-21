@@ -1,0 +1,47 @@
+{
+  "name": "iate-components",
+  "version": "0.5.0",
+  "description": "IATE common components",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=html mocha src/**/test/*.js",
+    "watch-test": "npm test; chokidar src/**/*.js src/**/test/*.js -i 'coverage' -c 'npm test' --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afmeirelles/components.git"
+  },
+  "keywords": [
+    "iate",
+    "components",
+    "validator",
+    "errors"
+  ],
+  "author": "André Meirelles (https://github.com/afmeirelles)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/afmeirelles/components/issues"
+  },
+  "homepage": "https://github.com/afmeirelles/components#readme",
+  "dependencies": {
+    "ajv": "^6.11.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "sinon": "^9.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "**/test/*.js"
+    ],
+    "check-coverage": true,
+    "branches": 100,
+    "lines": 100,
+    "functions": 100,
+    "statements": 100
+  }
+}
