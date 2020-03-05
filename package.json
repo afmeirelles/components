@@ -4,8 +4,9 @@
   "description": "IATE common components",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html mocha src/**/test/*.js",
-    "watch-test": "npm test; chokidar src/**/*.js src/**/test/*.js -i 'coverage' -c 'npm test' --silent"
+    "lint": "lynt src/**.js",
+    "test": "npm run lint; nyc --reporter=html mocha src/**/test/*.js",
+    "watch-test": "npm test; chokidar src/*.js src/test/*.js -i 'coverage' -c 'npm test' --silent"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
   "homepage": "https://github.com/afmeirelles/components#readme",
   "dependencies": {
     "ajv": "^6.11.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "lynt": "^0.5.5"
   },
   "devDependencies": {
     "chokidar-cli": "^2.1.0",

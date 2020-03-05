@@ -1,5 +1,4 @@
 const expect = require('expect.js')
-const sinon = require('sinon')
 
 const validator = require('../validator')
 
